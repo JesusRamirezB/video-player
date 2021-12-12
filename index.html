@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Fontawesome-->
+    <script src="https://kit.fontawesome.com/272ec915e8.js" crossorigin="anonymous"></script>
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto" rel="stylesheet">
+    <!--Estilo-->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <h1>Hola mundo</h1>
+    <button class="button" id="backward"></button>
+    <button class="button" id="forward"></button>
+    <button class="button" id="play"></button>
+    <button class="button" id="pause"></i></button>
+    <button>Avanzar 10 segundos</button>
+    <video controls muted poster="./images/posterVideo.PNG" src="./video/¡Hola! Soy Leonidas Esteban y así aprendí a programar..mp4" width="400" id="video"></video>
+    <script>
+        const $video = document.querySelector('#video');
+        const $play = document.querySelector('#play');
+        const $pause = document.querySelector('#pause');
+
+        $play.addEventListener('click', hanldePlay);
+        $pause.addEventListener('click', hanldePause);
+        if ($video.pause) {
+            $pause.hidden = true;
+            $play.hidden = false;
+        }
+
+        /*Functiones*/
+        function hanldePlay() {
+            console.log('play clicked');
+            $play.hidden = true;
+            $pause.hidden = false;
+            $video.play();
+        }
+
+        function hanldePause() {
+            console.log('puase clicked');
+            $play.hidden = false;
+            $pause.hidden = true;
+            $video.pause()
+        }
+
+        /*Codigo*/
+    </script>
+</body>
+
+</html>
