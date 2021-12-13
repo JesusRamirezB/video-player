@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -17,41 +17,25 @@
 </head>
 
 <body>
-    <h1>Hola mundo</h1>
-    <button class="button" id="backward"></button>
-    <button class="button" id="forward"></button>
-    <button class="button" id="play"></button>
-    <button class="button" id="pause"></i></button>
-    <button>Avanzar 10 segundos</button>
-    <video controls muted poster="./images/posterVideo.PNG" src="./video/¡Hola! Soy Leonidas Esteban y así aprendí a programar..mp4" width="400" id="video"></video>
-    <script>
-        const $video = document.querySelector('#video');
-        const $play = document.querySelector('#play');
-        const $pause = document.querySelector('#pause');
+    <div class="wrapper">
+        <div class="player">
+            <video poster="./images/posterVideo.PNG" src="./video/¡Hola! Soy Leonidas Esteban y así aprendí a programar..mp4" id="video"></video>
+            <div class="player-overlay">
+                <h2 class="player-title">Musica para programar</h2>
+                <div class="player-actions">
+                    <button class="button" id="backward" aria-label="Retroceder 10 segundos" title="Retroceder 10 segundos"></button>
+                    <button class="button" id="play" aria-label="Reproducir" title="Reproducir"></button>
+                    <button class="button" id="pause" aria-label="Pausar" title="Pausar"></button>
+                    <button class="button" id="forward" aria-label="Adelantar 10 segundos" title="Adelantar 10 segundos"></button>
+                    <div class="player-progress">
+                        <input type="range" min="0" step=".1" value="0" id="progress">
+                    </div>
+                </div>
+            </div>
 
-        $play.addEventListener('click', hanldePlay);
-        $pause.addEventListener('click', hanldePause);
-        if ($video.pause) {
-            $pause.hidden = true;
-            $play.hidden = false;
-        }
-
-        /*Functiones*/
-        function hanldePlay() {
-            console.log('play clicked');
-            $play.hidden = true;
-            $pause.hidden = false;
-            $video.play();
-        }
-
-        function hanldePause() {
-            console.log('puase clicked');
-            $play.hidden = false;
-            $pause.hidden = true;
-            $video.pause()
-        }
-
-        /*Codigo*/
+        </div>
+    </div>
+    <script src="./js/index.js">
     </script>
 </body>
 
